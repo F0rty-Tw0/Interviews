@@ -12,6 +12,12 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-detail.component.css'],
 })
 export class HeroDetailComponent {
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location
+  ) {}
+
   heroName = new FormControl('');
 
   hero_id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
@@ -25,12 +31,6 @@ export class HeroDetailComponent {
       return hero;
     })
   );
-
-  constructor(
-    private route: ActivatedRoute,
-    private heroService: HeroService,
-    private location: Location
-  ) {}
 
   goBack(): void {
     this.location.back();

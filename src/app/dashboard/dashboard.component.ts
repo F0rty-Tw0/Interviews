@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
 @Component({
